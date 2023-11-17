@@ -1,10 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomeView from "../../features/home/views/HomeView";
+import SeriesViews from "../../features/series/views/SeriesViews";
 import LoginView from "../../features/login/views/LoginView";
 import MovieView from "../../features/movie/views/MovieView";
 import PrivateRoute from "../auth/components/private_route";
 import PublicRoute from "../auth/components/public_route";
-import SeriesViews from "../../features/series/views/seriesViews";
 
 export const appRouter = createBrowserRouter([
   {
