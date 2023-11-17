@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { fetchData } from "../../services/api";
 import "./Banner.css";
 // import video from "../../assets/videos/saw-trailer.mp4";
-import image from "../../assets/sawxlogo.png";
+import image from "../../assets/Sawxlogo.png";
 
 const Banner = () => {
   return (
