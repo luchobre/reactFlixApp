@@ -1,0 +1,62 @@
+* {
+    text-decoration: none;
+}
+.container-onemovie {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Open Sans', sans-serif;
+}
+.container-movie {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+}
+.movie-title {
+    display: inline;
+    opacity: .8;
+}
+
+.movie-title h1 {
+    background-color: grey;
+    display: inline;
+    padding: 5px;
+    border-radius: 5px;
+    color: black;
+}
+.container-video {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content:end;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+    border-radius: 10px;
+}
+.container-text {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    align-items: center;
+    padding: 2%;
+}
+.buttons {
+    padding: 2%;
+}
+.buttons a {
+    cursor: pointer;
+    margin: 0 5px 0 5px;
+    font-size: 25px;
+}
+.button-play {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.buttons a:hover {
+    opacity: 0.8;
+    transition: 0.5s;
+}
