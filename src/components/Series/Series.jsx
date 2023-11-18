@@ -47,10 +47,27 @@ const Series = () => {
       .catch((error) => console.error(error));
   }, []);
 
+  
+  useEffect(() => {
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
+  const handleResize = () => {
+    setSlidesPerView(calculateSlidesPerView());
+  };
+  
+  const calculateSlidesPerView = () => {
+    return window.innerWidth < 768 ? 3 : 6;
+  };
+  const [slidesPerView, setSlidesPerView] = useState(calculateSlidesPerView());
+
   return (
     <div className="container">
       <h2>Popular series
-      <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view="6" speed="500" css-mode="true">
+      <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {series.map((serie) => (
           <swiper-slide key={serie.id}>
             <div className="item" >
@@ -66,7 +83,7 @@ const Series = () => {
       </swiper-container>
       </h2>
       <h2>Iconic series
-      <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view="6" speed="500" css-mode="true">
+      <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {topRated.map((serie) => (
           <swiper-slide key={serie.id}>
             <div className="item" >
@@ -82,7 +99,7 @@ const Series = () => {
       </swiper-container>
       </h2>
       <h2> Kids series
-      <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view="6" speed="500" css-mode="true">
+      <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {series2.map((serie) => (
           <swiper-slide key={serie.id}>
             <div className="item" >
@@ -98,7 +115,7 @@ const Series = () => {
       </swiper-container>
       </h2>
       <h2> Claim series
-      <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view="6" speed="500" css-mode="true">
+      <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {series3.map((serie) => (
           <swiper-slide key={serie.id}>
             <div className="item" >

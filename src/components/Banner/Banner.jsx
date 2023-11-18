@@ -22,10 +22,7 @@ const Banner = () => {
                 procedimiento médico arriesgado y experimental con la esperanza
                 de encontrar una cura milagrosa para su cáncer, sólo para
                 descubrir que toda la operación es una estafa para robar a los
-                más vulnerables. Armado con un nuevo propósito, el infame
-                asesino en serie regresa a su trabajo, dándole la vuelta a los
-                estafadores en su forma visceral característica a través de
-                trampas tortuosas, trastornadas e ingeniosas.
+                más vulnerables.
               </p>
             </div>
           </div>
