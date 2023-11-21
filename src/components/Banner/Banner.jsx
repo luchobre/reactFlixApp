@@ -1,29 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { fetchData } from "../../services/api";
 import "./Banner.css";
-// import video from "../../assets/videos/saw-trailer.mp4";
 import image from "../../assets/Sawxlogo.png";
+import ReactPlayer from 'react-player'
+import { fetchMovie } from "../../services/oneMovieApi";
 
 const Banner = () => {
+  const [movie, setMovie] = useState({});
+
+  useEffect(() => {
+    fetchMovie('951491')
+      .then((res) => {
+        setMovie(res);
+      })
+      .catch((error) => console.error(error));
+  }, []);
+
+
   return (
     <>
       <div className="banner-container">
         <div className="banner-container">
           <div className="video-background">
-            {/* <video autoPlay loop id="myVideo" controls preload="auto">
-              <source src={video} type="video/mp4" />
-              Tu navegador no admite el elemento de video.
-            </video> */}
+          <ReactPlayer 
+          url='https://www.youtube.com/watch?v=0Nth2F7KCD8'
+          width={'100%'}  
+          height={'100vh'}
+          className='banner-video'
+          />
             <div className="content">
               <img src={image} alt="logo" />
+              <div className="container-text">
               <p>
-                Entre los acontecimientos de 'Saw' y 'Saw II', un enfermo y
-                desesperado John Kramer viaja a México para someterse a un
-                procedimiento médico arriesgado y experimental con la esperanza
-                de encontrar una cura milagrosa para su cáncer, sólo para
-                descubrir que toda la operación es una estafa para robar a los
-                más vulnerables.
+                {movie.overview}
               </p>
+              </div>
             </div>
           </div>
         </div>
