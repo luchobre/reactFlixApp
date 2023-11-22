@@ -1,39 +1,83 @@
 .nav {
-    position: fixed;
-    top: 0;
-    z-index: 1;
-    width: 100%;
-    display: flex;
-    padding: 20px;
-    height: 20px;
-    left: 0;
-    justify-content: space-between;
-    /* Animation */
-    transition-timing-function: ease-in;
-    transition: all 0.5s;
+  display: flex;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  padding: 30px;
+  height: 20px;
+  left: 0;
+  /* Animation */
+  transition-timing-function: ease-in;
+  transition: all 0.5s;
+}
+
+.user {
+  position: fixed;
+  top: 9px;
+  right: 20px;
+  width: 40px;
+  object-fit: contain;
+  cursor: pointer;
+}
+.nav_black {
+  background-color: black;
+  transition: ease-in-out 800ms;
+}
+.logo_container {
+  display: flex;
+  align-items: center;
+}
+.nav_logo {
+  position: fixed;
+  left: 20px;
+  width: 100px;
+  object-fit: contain;
+}
+.nav_container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 10%;
+}
+.nav_link {
+  margin: 0 10px;
+  font-size: 14px;
+  font-family: "Open Sans", sans-serif;
+  cursor: pointer;
+  color: lightgray;
+}
+.nav_link:hover {
+  color: rgb(148, 143, 143);
+  transition: .5s;
+}
+/* ==================================MENU AVATAR===============================*/
+
+.menuAvatar-container {
+  position: absolute;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding: 15px;
+  margin: 25px 2%;
+  height: 270px;
+}
+
+.menuAvatar-container a {
+  font-size: 14px;
+  margin: 10px 0;
+  cursor: pointer;
+}
+.menuAvatar-container a:hover {
+  color: rgb(148, 143, 143);
+  transition: .5s;
+}
+
+
+/* ==================================MEDIA QUERIES===============================*/
+@media (max-width: 768px) {
+  .nav_container {
+    display: none;
   }
-  
-  .user {
-    position: fixed;
-    top: 9px;
-    right: 20px;
-    width: 40px;
-    object-fit: contain;
-  }
-  .nav_black {
-    background-color: black;
-    transition: ease-in-out 800ms;
-  }
-  
-  .nav_logo {
-    position: fixed;
-    left: 20px;
-    width: 100px;
-    object-fit: contain;
-  }
-  .button-logout {
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  
+}
