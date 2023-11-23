@@ -24,15 +24,13 @@ const Banner = () => {
           <ReactPlayer 
           url='https://www.youtube.com/watch?v=0Nth2F7KCD8'
           width={'100%'}  
-          height={'100vh'}
+          height={'60vh'}
           className='banner-video'
           />
             <div className="content">
               <img src={image} alt="logo" />
-              <div className="container-text">
-              <p>
+              <div className="banner-text">
                 {movie.overview}
-              </p>
               </div>
             </div>
           </div>

@@ -20,7 +20,7 @@ const OneSerie = () => {
       .then((res) => {
         setSerie(res);
         setBackgroundImage(
-          `https://image.tmdb.org/t/p/w500${res.backdrop_path}`
+          `https://image.tmdb.org/t/p/w1280${res.backdrop_path}`
         );
       })
       .catch((error) => console.error(error));
@@ -35,9 +35,6 @@ const OneSerie = () => {
             backgroundImage: `url(${backgroundImage})`,
           }}
         >
-          <div className="movie-title">
-            <h1>{serie.name}</h1>
-          </div>
           <div className="buttons">
             <a href="" className="button-play">
               ► Reproducir
@@ -58,6 +55,9 @@ const OneSerie = () => {
             </a>
           </div>
         </div>
+        <div className="movie-title">
+            <h1>{serie.name}</h1>
+          </div> 
         <div className="container-text">
           <div className="left-text">
             <div className="left-text-info">

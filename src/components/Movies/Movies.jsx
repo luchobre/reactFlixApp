@@ -12,9 +12,10 @@ const Movies = () => {
   const [movies2, setMovies2] = useState([]);
   const [movies3, setMovies3] = useState([]);
   const [topRated, setTopRated] = useState([]);
+
   
 
-  const URL_IMAGE = "https://image.tmdb.org/t/p/w500";
+  const URL_IMAGE = "https://image.tmdb.org/t/p/original";
   
   useEffect(() => {
     fetchData(1)
@@ -68,7 +69,7 @@ const Movies = () => {
 
   return (
     <div className="container">
-      <h2>Popular movies
+      <h2>Películas estreno
       <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {movies.map((movie) => (
           <swiper-slide key={movie.id}>
@@ -84,7 +85,7 @@ const Movies = () => {
         ))}
       </swiper-container>
       </h2>
-      <h2>Iconic movies
+      <h2>Películas icónicas
       <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {topRated.map((movie) => (
           <swiper-slide key={movie.id}>
@@ -100,7 +101,7 @@ const Movies = () => {
         ))}
       </swiper-container>
       </h2>
-      <h2> Kids movies
+      <h2> Películas populares
       <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {movies2.map((movie) => (
           <swiper-slide key={movie.id}>
@@ -116,7 +117,7 @@ const Movies = () => {
         ))}
       </swiper-container>
       </h2>
-      <h2> Claim movies
+      <h2> Películas para pochoclear
       <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {movies3.map((movie) => (
           <swiper-slide key={movie.id}>

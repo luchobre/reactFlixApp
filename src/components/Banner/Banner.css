@@ -9,28 +9,28 @@
   
   .content {
     position: absolute;
-    width: 60%;
+    width: 40%;
     color: white;
     /* margin-left:7%; */
-    top: 25%;
+    top: 20%;
     font-family: 'Open Sans', sans-serif;
     /* border: 2px solid white; */
   }
 
   .content img {
-    width: 30%;
+    width: 40%;
   }
   h1 {
     font-size: 3rem;
   }
 
-  .container-text p{
-    font-size: 20px;
+  .banner-text {
+    font-size: 17px;
     }
 
     @media (max-width: 1100px) {
-      .container-text p{
-        font-size: 15px;
+      .banner-text{
+        font-size: 13px;
         }
         .content {
           top: 30%;
@@ -41,14 +41,14 @@
     }
 
     @media (max-width:780px) {
-      .container-text p{
+      .banner-text{
         display: none;
         }
         .content img {
           width: 80%;
         }
         .content {
-          top: 40%;
+          top: 30%;
         }
         .banner-video {
           margin: 8% 0;
