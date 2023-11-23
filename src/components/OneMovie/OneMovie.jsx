@@ -4,6 +4,7 @@ import "./OneMovie.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCalendar,
+  faCirclePlay,
   faCirclePlus,
   faClock,
   faThumbsUp,
@@ -38,9 +39,11 @@ const OneMovie = () => {
         >
           <div className="buttons">
             <a href="" className="button-play">► Reproducir</a>
-            <a href="" className="button-play-media">► Ver</a>
-            <a href=""className="button-plus"><FontAwesomeIcon icon={faCirclePlus} style={{ color: "#FFF" }} size="xl"/></a>
-            <a href=""className="button-like"><FontAwesomeIcon icon={faThumbsUp} style={{ color: "#FFF" }} size="xl"/></a>
+            <a href="" className="button-play-media"><FontAwesomeIcon icon={faCirclePlay} style={{color: "#ffffff",}} size="xl" /></a>
+            <div>
+              <a href=""className="button-plus"><FontAwesomeIcon icon={faCirclePlus} style={{ color: "#FFF" }} size="xl"/></a>
+              <a href=""className="button-like"><FontAwesomeIcon icon={faThumbsUp} style={{ color: "#FFF" }} size="xl"/></a>
+            </div>
           </div>
         </div>
         <div className="movie-title"><h1>{movie.title}</h1></div>

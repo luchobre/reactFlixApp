@@ -46,6 +46,7 @@
 .buttons {
     padding: 2%;
     display: flex;
+    justify-content: space-between;
 }
 .buttons a {
     cursor: pointer;
@@ -73,10 +74,8 @@
     }
     .button-play-media {
         display: flex;
-        background-color: black;
-        border: 2px solid white;
+        color: black;
         border-radius: 5px;
-        padding: 5px;
         align-items: center;
         justify-content: center;
     }
