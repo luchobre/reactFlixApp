@@ -4,6 +4,7 @@ import "./Series.css";
 
 // import function to register Swiper custom elements
 import { register } from "swiper/element/bundle";
+import { Spinner } from "@nextui-org/react";
 // register Swiper custom elements
 register();
 
@@ -12,12 +13,14 @@ const Series = () => {
   const [series2, setSeries2] = useState([]);
   const [series3, setSeries3] = useState([]);
   const [topRated, setTopRated] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const URL_IMAGE = "https://image.tmdb.org/t/p/w500";
 
   useEffect(() => {
     fetchData(1,'popular','tv')
       .then((res) => {
+        setIsLoading(false)
         setSeries(res.results);
       })
       .catch((error) => console.error(error));
@@ -66,7 +69,11 @@ const Series = () => {
 
   return (
     <div className="container">
-      <h2>Popular series
+      <h2>Popular series</h2>
+      {
+        isLoading
+        ? <Spinner />
+        :
       <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {series.map((serie) => (
           <swiper-slide key={serie.id}>
@@ -81,8 +88,13 @@ const Series = () => {
           </swiper-slide>
         ))}
       </swiper-container>
-      </h2>
-      <h2>Iconic series
+      }
+
+      <h2>Iconic series</h2>
+      {
+        isLoading
+        ? <Spinner />
+        :
       <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {topRated.map((serie) => (
           <swiper-slide key={serie.id}>
@@ -97,8 +109,12 @@ const Series = () => {
           </swiper-slide>
         ))}
       </swiper-container>
-      </h2>
-      <h2> Kids series
+    }
+      <h2> Kids series</h2>
+      {
+        isLoading
+        ? <Spinner />
+        :
       <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {series2.map((serie) => (
           <swiper-slide key={serie.id}>
@@ -113,8 +129,12 @@ const Series = () => {
           </swiper-slide>
         ))}
       </swiper-container>
-      </h2>
-      <h2> Claim series
+    }
+      <h2> Claim series</h2>
+      {
+        isLoading
+        ? <Spinner />
+        :
       <swiper-container className="slider-container" navigation="true" pagination="true" scrollbar="true" slides-per-view={slidesPerView} speed="500" css-mode="true">
         {series3.map((serie) => (
           <swiper-slide key={serie.id}>
@@ -129,7 +149,7 @@ const Series = () => {
           </swiper-slide>
         ))}
       </swiper-container>
-      </h2>
+    }
     </div>
   );
 };

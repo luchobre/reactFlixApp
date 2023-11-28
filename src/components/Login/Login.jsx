@@ -28,7 +28,7 @@ function Login() {
         <div className="showcase-content">
           <div className="formm">
             <form >
-              <h1>Sign In</h1>
+              <h1 className="loginTitle">Sign In</h1>
               <div className="info">
                 <input
                   className="email"
@@ -54,7 +54,7 @@ function Login() {
                   <input type="checkbox" value="true" id="rememberMe" />
                   <label htmlFor="rememberMe">Remember me</label>
                 </div>
-                <a href="https://www.netflix.com/dz-en/LoginHelp">
+                <a href="#">
                   Need Help ?
                 </a>
               </div>
@@ -71,7 +71,7 @@ function Login() {
           </div>
           <div className="signup">
             <p>New to Reactflix ?</p>
-            <a href="https://www.netflix.com/dz-en/">Sign up now</a>
+            <a href="#">Sign up now</a>
           </div>
           <div className="more">
             <p>

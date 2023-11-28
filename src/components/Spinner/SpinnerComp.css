@@ -1,0 +1,14 @@
+.containerSpinner {
+    height: 60vh;
+}
+.spinnerElement {
+    display: block;
+    margin: 15% 0 0 50%;
+}
+
+
+@media (max-width: 640px) {
+    .spinnerElement {
+        margin: 50% 0 0 50%;
+    }
+}

@@ -34,19 +34,41 @@ const OneMovie = () => {
           className="container-video"
           style={{
             backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: "cover"
+            backgroundSize: "cover",
           }}
         >
           <div className="buttons">
-            <a href="" className="button-play">► Reproducir</a>
-            <a href="" className="button-play-media"><FontAwesomeIcon icon={faCirclePlay} style={{color: "#ffffff",}} size="xl" /></a>
+            <a href="" className="button-play">
+              ► Reproducir
+            </a>
+            <a href="" className="button-play-media">
+              <FontAwesomeIcon
+                icon={faCirclePlay}
+                style={{ color: "#ffffff" }}
+                size="xl"
+              />
+            </a>
             <div>
-              <a href=""className="button-plus"><FontAwesomeIcon icon={faCirclePlus} style={{ color: "#FFF" }} size="xl"/></a>
-              <a href=""className="button-like"><FontAwesomeIcon icon={faThumbsUp} style={{ color: "#FFF" }} size="xl"/></a>
+              <a href="" className="button-plus">
+                <FontAwesomeIcon
+                  icon={faCirclePlus}
+                  style={{ color: "#FFF" }}
+                  size="xl"
+                />
+              </a>
+              <a href="" className="button-like">
+                <FontAwesomeIcon
+                  icon={faThumbsUp}
+                  style={{ color: "#FFF" }}
+                  size="xl"
+                />
+              </a>
             </div>
           </div>
         </div>
-        <div className="movie-title"><h1>{movie.title}</h1></div>
+        <div className="movie-title">
+          <h1>{movie.title}</h1>
+        </div>
         <div className="container-text">
           <div className="left-text">
             <div className="left-text-info">
@@ -55,11 +77,11 @@ const OneMovie = () => {
                 <FontAwesomeIcon
                   icon={faCalendar}
                   style={{ color: "#ffffff" }}
-                />
+                />{" "}
                 {movie.release_date}
               </p>
               <p>
-                <FontAwesomeIcon icon={faClock} style={{ color: "#ffffff" }} />
+                <FontAwesomeIcon icon={faClock} style={{ color: "#ffffff" }} />{" "}
                 {movie.runtime} minutos
               </p>
               <p>
@@ -81,7 +103,9 @@ const OneMovie = () => {
             <p>
               {" "}
               {movie.production_companies
-                ? movie.production_companies.map((companies) => companies.name).join(", ")
+                ? movie.production_companies
+                    .map((companies) => companies.name)
+                    .join(", ")
                 : "Sin productoras disponibles"}
             </p>
           </div>

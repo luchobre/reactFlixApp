@@ -66,11 +66,11 @@ const OneSerie = () => {
                 <FontAwesomeIcon
                   icon={faCalendar}
                   style={{ color: "#ffffff" }}
-                />
+                />{" "}
                 {serie.first_air_date}
               </p>
               <p>
-                <FontAwesomeIcon icon={faClock} style={{ color: "#ffffff" }} />
+                <FontAwesomeIcon icon={faClock} style={{ color: "#ffffff" }} />{" "}
                 {serie.runtime} minutos
               </p>
               <p>
