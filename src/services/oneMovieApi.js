@@ -1,4 +1,4 @@
-const API_KEY = 'ac0627bfbad8d649f13be58b7907a6b1'
+const API_KEY = import.meta.env.VITE_APP_IMDB_APIKEY
 const LANGUAGE = 'es-ES';
 
 export const fetchMovie = async (movieId) => {
