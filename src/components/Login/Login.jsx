@@ -5,19 +5,19 @@ import { useAuth } from "../../core/auth/hooks/use_auth";
 function Login() {
   const { login } = useAuth();
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     // FORMA COMUN 
-  //     // const { email, password } = e.target; 
-  //     //FORMA MAS NUEVA
-  //     const { email, password } = Object.fromEntries(new FormData(e.target));
-  //     login(email, password);
-  //   } catch (error) {
-  //     console.log(error)
-  //   }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    try {
+      // FORMA COMUN 
+      // const { email, password } = e.target; 
+      //FORMA MAS NUEVA
+      const { email, password } = Object.fromEntries(new FormData(e.target));
+      login(email, password);
+    } catch (error) {
+      console.log(error)
+    }
 
-  // };
+  };
 
   return (
     <div>
@@ -27,7 +27,7 @@ function Login() {
         </div>
         <div className="showcase-content">
           <div className="formm">
-            <form >
+            <form onSubmit={handleSubmit}>
               <h1 className="loginTitle">Sign In</h1>
               <div className="info">
                 <input
@@ -35,6 +35,7 @@ function Login() {
                   type="email"
                   name="email"
                   placeholder="Email or phone number"
+                  required
                 />
                 <br />
                 <input
@@ -42,10 +43,11 @@ function Login() {
                   type="password"
                   name="password"
                   placeholder="Password"
+                  required
                 />
               </div>
               <div className="btn">
-                <button className="btn-primary" type="submit" onClick={login}>
+                <button className="btn-primary" type="submit">
                   Sign In
                 </button>
               </div>

@@ -20,7 +20,7 @@ export const appRouter = createBrowserRouter([
     element: (
       <PublicRoute>
         <LoginView />
-      </PublicRoute> 
+      </PublicRoute>
     ),
   },
   {
@@ -41,6 +41,6 @@ export const appRouter = createBrowserRouter([
   },
   {
     path: "*",
-    element: 'No se encontro la pagina'
+    element: "No se encontro la pagina",
   },
 ]);
