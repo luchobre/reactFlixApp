@@ -26,3 +26,11 @@ h2 {
   font-family: "Open Sans", sans-serif;
   padding: 10px 0;
 } */
+.container-noFavourites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider-noFavourites {
+  font-size: 30px;
+}

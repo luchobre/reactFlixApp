@@ -5,6 +5,7 @@ import { Spinner } from "@nextui-org/react";
 
 // import function to register Swiper custom elements
 import { register } from "swiper/element/bundle";
+import useFavouriteMovies from "../Favourites/FavouriteMoviesContext";
 // register Swiper custom elements
 register();
 
@@ -14,6 +15,9 @@ const Movies = () => {
   const [movies3, setMovies3] = useState([]);
   const [topRated, setTopRated] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+
+  // FAVORITOS
+  const {favouriteMovies} = useFavouriteMovies();
 
   const URL_IMAGE = "https://image.tmdb.org/t/p/original";
 
@@ -68,6 +72,41 @@ const Movies = () => {
 
   return (
     <div className="container">
+      { favouriteMovies.length > 0 ? (
+        <>
+      <h2>Películas Favoritas</h2>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <swiper-container
+          className="slider-container"
+          navigation="true"
+          pagination="true"
+          scrollbar="true"
+          slides-per-view={slidesPerView}
+          speed="500"
+          css-mode="true"
+        >
+          {favouriteMovies.map((movie) => (
+            <swiper-slide key={movie.id}>
+              <div className="item">
+                <a href={`/movie/${movie.id}`}>
+                  <img
+                    className="movie_image"
+                    src={`${URL_IMAGE}${movie.poster_path}`}
+                  ></img>
+                </a>
+              </div>
+            </swiper-slide>
+          ))}
+        </swiper-container>
+      )}
+      </>
+      ) : (
+        <div className="container-noFavourites">
+          <p className="slider-noFavourites">'Aún no tienes favoritos'</p>
+        </div>
+        ) }
       <h2>Películas estreno</h2>
       {isLoading ? (
         <Spinner />

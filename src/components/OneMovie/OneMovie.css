@@ -49,10 +49,13 @@
     display: flex;
     justify-content: space-between;
 }
-.buttons a {
+.button-like, .button-plus{
     cursor: pointer;
     margin: 0 5px 0 5px;
-    font-size: 25px;
+    font-size: 35px;
+}
+.button-like.liked{
+    color: red
 }
 .button-play {
     background-color: white;
