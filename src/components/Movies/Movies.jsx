@@ -74,7 +74,7 @@ const Movies = () => {
     <div className="container">
       { favouriteMovies.length > 0 ? (
         <>
-      <h2>Películas Favoritas</h2>
+      <h2>Películas o series favoritas</h2>
       {isLoading ? (
         <Spinner />
       ) : (

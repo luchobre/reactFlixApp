@@ -10,11 +10,16 @@ import {
   faThumbsUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
+import useFavouriteMovies from "../Favourites/FavouriteMoviesContext";
 
 const OneSerie = () => {
   const { serieId } = useParams();
   const [serie, setSerie] = useState({});
   const [backgroundImage, setBackgroundImage] = useState("");
+
+  //FAVORITOS
+
+  const { favouriteMovies, handleFavourite } = useFavouriteMovies()
 
   useEffect(() => {
     fetchSerie(serieId)
@@ -48,20 +53,18 @@ const OneSerie = () => {
               />
             </a>
             <div>
-              <a href="" className="button-plus">
-                <FontAwesomeIcon
+            <FontAwesomeIcon
+                className="button-plus"
                   icon={faCirclePlus}
                   style={{ color: "#FFF" }}
                   size="xl"
                 />
-              </a>
-              <a href="" className="button-like">
                 <FontAwesomeIcon
+                  className={`button-like ${favouriteMovies.find((favMovie) => favMovie.id === serie.id) ? 'liked' : ''}`}
                   icon={faThumbsUp}
-                  style={{ color: "#FFF" }}
                   size="xl"
+                  onClick={()=> handleFavourite(serie)}
                 />
-              </a>
             </div>
           </div>
         </div>
